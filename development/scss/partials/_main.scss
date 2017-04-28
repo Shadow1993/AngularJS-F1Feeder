@@ -1,0 +1,30 @@
+.main {
+    left: 250px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    float: left;
+    padding: 25px;
+//Decide are you gonna be doing PHONE or DESKTOP first styling
+//  Currently setup to be PHONE first
+
+//If you're doing PHONE first,
+//      just fill in the blanks
+
+//If you are doing DESKTOP first,
+//      uncomment the phone include and comment out the desktop one,
+//      then fill in the blanks
+
+    @include breakpoint(tablet) {
+
+    }
+
+    @include breakpoint(desktop) {
+
+    }
+
+    // @include breakpoint(phone) {
+        
+    // }
+
+}

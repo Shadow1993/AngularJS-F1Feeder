@@ -44,16 +44,8 @@
 
     </head>
     <body ng-controller='mainController'>
-        <header>
-            <h1>Template</h1>
-            <h2 ng-cloak>{{ test }}</h2>
-        </header>
-        <main>
 
-        </main>
-        <footer>
-
-        </footer>
+        <div ui-view></div>
 
         <!-- Dependencies -->
         <script src='./dependencies/bower_components/jquery/dist/jquery.min.js'></script>
@@ -64,7 +56,9 @@
 
         <!-- Scripts -->
         <script src='./scripts/app.js'></script>
+        <script src='./scripts/services/DataService.js'></script>
         <script src='./scripts/controllers/mainController.js'></script>
+        <script src='./scripts/controllers/DriversController.js'></script>
         <!-- Scripts:End -->
 
     </body>

@@ -14,7 +14,7 @@
     "disallowSpacesInsideObjectBrackets": null,
     "disallowImplicitTypeConversion": ["string"],
 
-    "safeContextKeyword": "_this",
+    "safeContextKeyword": ["_this", "vm"],
 
     "jsDoc": {
         "checkAnnotations": "closurecompiler",

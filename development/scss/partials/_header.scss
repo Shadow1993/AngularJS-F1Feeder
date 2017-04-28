@@ -1,5 +1,34 @@
 .header {
 
+    width: 250px;
+    left: 0;
+    top: 0;
+    background-color: $black;
+    color: $white;
+    height: 100vh;
+    float: left;
+
+    nav{
+        .logo{
+            font-weight: bolder;
+            font-size: 32px;
+            padding: 15px;
+        }
+        ul{
+            a li{
+                color: $white;
+                font-size: 20px;
+                text-indent: 20px;
+                line-height: 28px;
+                padding: 10px 5px;
+                cursor: pointer;
+
+                &:hover{
+                    color: $grey;
+                }
+            }
+        }
+    }
 //Decide are you gonna be doing PHONE or DESKTOP first styling
 
 //If you're doing PHONE first,
