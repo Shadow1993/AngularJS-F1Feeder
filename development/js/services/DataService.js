@@ -5,7 +5,11 @@
 
     app.factory('DataService', ['$http', '$q', DataService]);
 
-    function DataService($http) {
+    function DataService($http, $q) {
+
+        return {
+            getData: AllData
+        };
 
         // var deferred = $q.defer();
 
@@ -19,10 +23,6 @@
                 console.log(data);
                 // deferred.resolve(data);
             });
-        };
-
-        return {
-            getData: AllData
         };
     }
 }());
