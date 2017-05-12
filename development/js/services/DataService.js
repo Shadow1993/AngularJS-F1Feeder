@@ -3,26 +3,19 @@
 
     var app = angular.module('app');
 
-    app.factory('DataService', ['$http', '$q', DataService]);
+    app.factory('DataService', ['$http', DataService]);
 
-    function DataService($http, $q) {
+    function DataService($http) {
 
-        return {
-            getData: AllData
-        };
-
-        // var deferred = $q.defer();
-
-        var AllData = function(successcb) {
-            $http({
+        var AllDrivers = function() {
+            return $http({
                 method: 'GET',
                 url: 'http://ergast.com/api/f1/drivers.json'
-            })
-            .success(function(data) {
-                successcb(data);
-                console.log(data);
-                // deferred.resolve(data);
             });
+        };
+
+        return {
+            getDrivers: AllDrivers
         };
     }
 }());

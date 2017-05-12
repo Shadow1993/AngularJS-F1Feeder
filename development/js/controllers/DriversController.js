@@ -10,10 +10,16 @@
 
         var vm = this;
 
-        vm.test = DataService.getData(function(data) {
-                vm.data = data;
+        vm.test = 'test';
+
+        DataService.getDrivers()
+            .then(function(data) {
+                vm.drivers = data;
+                console.log(vm.drivers);
             })
-        console.log(vm.data);
+            .catch(function(response) {
+                throw response;
+            });
 
     }
 }());

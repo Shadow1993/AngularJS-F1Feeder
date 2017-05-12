@@ -1,6 +1,5 @@
-<p>{{ drivers.test }}</p>
 <div>
     <ul>
-        <li ng-repeat='driver in drivers.data.DriverTable.Drivers'>{{ driver.givenName }}</li>
+        <li ng-repeat='driver in drivers.drivers.data.MRData.DriverTable.Drivers'>{{$index + 1}} {{ driver.familyName }} {{ driver.givenName }}</li>
     </ul>
 </div>
