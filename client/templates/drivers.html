@@ -1,5 +1,22 @@
 <div>
-    <ul>
-        <li ng-repeat='driver in drivers.drivers.data.MRData.DriverTable.Drivers'>{{$index + 1}} {{ driver.familyName }} {{ driver.givenName }}</li>
-    </ul>
+    <table>
+        <thead>
+            Drivers Championship Standings - {{ drivers.year }}
+        </thead>
+        <tbody>
+            <tr ng-repeat='driver in drivers'>
+                        <td>{{ $index + 1 }}</td>
+                        <td>
+                            <img ng-src='./images/flags/{{ driver.nationality }}.png' />
+                            <a ui-sref='main.driver({id: driver.driverId})' >
+                                {{ driver.Driver.familyName }}
+                                {{ driver.Driver.givenName }}
+                            </a>
+                        </td>
+                        <td>{{ driver.Constructors[0].name }}</td>
+                    </tr>
+                
+            </tr>
+        </tbody>
+    </table>
 </div>

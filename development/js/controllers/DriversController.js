@@ -10,11 +10,14 @@
 
         var vm = this;
 
+        vm.year = 2013;
+
         vm.test = 'test';
 
-        DataService.getDrivers()
-            .then(function(data) {
-                vm.drivers = data;
+        DataService.getDrivers(vm.year)
+            .then(function(response) {
+                console.log(response);
+                vm.drivers = response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
                 console.log(vm.drivers);
             })
             .catch(function(response) {

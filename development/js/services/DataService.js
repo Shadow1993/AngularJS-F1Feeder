@@ -7,15 +7,23 @@
 
     function DataService($http) {
 
-        var AllDrivers = function() {
+        var AllDrivers = function(year) {
             return $http({
                 method: 'GET',
-                url: 'http://ergast.com/api/f1/drivers.json'
+                url: 'http://ergast.com/api/f1/' + year + '/driverStandings.json'
+            });
+        };
+
+        var DriverDetails = function() {
+            return $http({
+                method: 'GET',
+                url: ''
             });
         };
 
         return {
-            getDrivers: AllDrivers
+            getDrivers: AllDrivers,
+            getDriver: DriverDetails
         };
     }
 }());

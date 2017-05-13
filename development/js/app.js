@@ -30,6 +30,12 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
             controllerAs: 'drivers',
             templateUrl: './../templates/drivers.html'
         })
+        .state('main.driver', {
+            url: '/drivers/{id}',
+            templateUrl: './../templates/driver.html',
+            controller: 'DriverController',
+            controllerAs: 'driver'
+        })
         .state('main.teams', {
             url: '/teams',
             templateUrl: './../templates/teams.html'
