@@ -14,16 +14,24 @@
             });
         };
 
-        var DriverDetails = function() {
+        var DriverDetails = function(year, id) {
             return $http({
                 method: 'GET',
-                url: ''
+                url: 'http://ergast.com/api/f1/' + year + '/drivers/' + id + '/driverStandings.json'
+            });
+        };
+
+        var DriverRaces = function(year, id) {
+            return $http({
+                method: 'GET',
+                url: 'http://ergast.com/api/f1/' + year + '/drivers/' + id + '/results.json'
             });
         };
 
         return {
             getDrivers: AllDrivers,
-            getDriver: DriverDetails
+            getDriverDetails: DriverDetails,
+            getDriverRaces: DriverRaces
         };
     }
 }());

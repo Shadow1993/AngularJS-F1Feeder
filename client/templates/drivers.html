@@ -1,22 +1,33 @@
 <div>
-    <table>
-        <thead>
-            Drivers Championship Standings - {{ drivers.year }}
-        </thead>
-        <tbody>
-            <tr ng-repeat='driver in drivers'>
-                        <td>{{ $index + 1 }}</td>
-                        <td>
-                            <img ng-src='./images/flags/{{ driver.nationality }}.png' />
-                            <a ui-sref='main.driver({id: driver.driverId})' >
-                                {{ driver.Driver.familyName }}
-                                {{ driver.Driver.givenName }}
-                            </a>
-                        </td>
-                        <td>{{ driver.Constructors[0].name }}</td>
-                    </tr>
-                
-            </tr>
-        </tbody>
-    </table>
+    <div class='search'>
+        <input type='text' ng-model='drivers.nameFilter' placeholder='Search...' />
+    </div>
+    <div>
+        <p class='championship'>Drivers Championship</p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan='4'>
+                        Drivers Championship Standings - {{ drivers.year }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='driver in drivers.drivers | filter:drivers.searchFilter'>
+                            <td>{{ $index + 1 }}</td>
+                            <td>
+                                <img ng-src='./images/flags/{{ driver.Driver.nationality }}.png' />
+                                <a ui-sref='main.driver({id: driver.Driver.driverId})' >
+                                    {{ driver.Driver.familyName }}
+                                    {{ driver.Driver.givenName }}
+                                </a>
+                            </td>
+                            <td>{{ driver.Constructors[0].name }}</td>
+                            <td>{{ driver.points }}</td>
+                        </tr>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

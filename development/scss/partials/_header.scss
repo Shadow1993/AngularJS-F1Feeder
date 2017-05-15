@@ -3,16 +3,28 @@
     width: 250px;
     left: 0;
     top: 0;
-    background-color: $black;
+    background-color: darken($grey, 50);
     color: $white;
-    height: 100vh;
     float: left;
 
     nav{
         .logo{
-            font-weight: bolder;
-            font-size: 32px;
-            padding: 15px;
+            background-color: darkred;
+            height: 250px;
+            padding-top: 100px;
+            p {
+                font-weight: bolder;
+                font-size: 32px;
+                text-align: center;
+                background-color: darken($grey, 70);
+                padding: 15px;
+                &:first-child {
+                    border-top: 4px solid white;
+                }
+                &:last-child {
+                    border-bottom: 4px solid white;
+                }
+            }
         }
         ul{
             a li{

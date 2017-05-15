@@ -2,9 +2,8 @@
     left: 250px;
     top: 0;
     right: 0;
-    height: 100vh;
-    float: left;
-    padding: 25px;
+    bottom: 0;
+    background-color: darken($grey, 20);
 //Decide are you gonna be doing PHONE or DESKTOP first styling
 //  Currently setup to be PHONE first
 
@@ -26,5 +25,66 @@
     // @include breakpoint(phone) {
         
     // }
+    div {
+        div:nth-child(2) {
+            padding: 15px;
+        }
+    }
+    .search {
+        background-color: darken($grey, 50);
+        overflow: hidden;
+        padding: 5px;
+        input {
+            float: right;
+            padding: 5px;
+            border: 2px solid lightgrey;
+            border-radius: 5px;
+            background-color: grey;
+            color: lightgrey;
+        }
+        ::-webkit-input-placeholder {
+            color: lightgrey;
+        }
+    }
 
+    table {
+        width: 100%;
+        img {
+            margin-right: 15px;
+        }
+        tr {
+            background-color: $white;
+            td {
+                font-size: 1.1em;
+                line-height: 35px;
+                padding: 5px 25px 5px 15px;
+                border: 2.5px solid lightgrey;
+            }
+        }
+        thead {
+            text-align: left;            
+            overflow: hidden;
+            th {
+                background-color: darken(lightgrey, 10);
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                padding: 10px 0 10px 20px;
+            }
+        }
+    }
+
+    .championship {
+        color: $white;
+        text-shadow: 6px 6px 12px $black;
+        text-transform: uppercase;
+        font-size: 28px;
+        font-weight: bolder;
+        font-style: italic;
+        padding: 15px 0 15px 25px;
+    }
+
+}
+.app-size {
+    height: 100vh;
+    overflow-y: auto;
 }
