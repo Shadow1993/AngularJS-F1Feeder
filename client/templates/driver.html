@@ -1,31 +1,39 @@
 <div>
-    <div></div>
-    <div>
-        <table class='result-table'>
-        <thead>
-            <tr>
-                <th colspan='5'>Formula 1 {{ driver.year }} Results</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>Round</td>
-            <td>Grand Prix</td>
-            <td>Team</td>
-            <td>Grid</td>
-            <td>Race</td>
-            </tr>
-            <tr ng-repeat='race in driver.races'>
-            <td>{{ race.round }}</td>
-            <td>
-                <img  ng-src='images/flags/{{ race.Circuit.Location.country }}.png' />
-                {{ race.raceName }}
-                </td>
-            <td>{{ race.Results[0].Constructor.name }}</td>
-            <td>{{ race.Results[0].grid}}</td>
-            <td>{{ race.Results[0].position }}</td>
-            </tr>
-        </tbody>
+    <div class='driver'>
+        <img ng-src='images/flags/{{ driver.driver.Driver.nationality }}.png' />
+        <p>{{ driver.driver.Driver.familyName }}</p>
+        <p>{{ driver.driver.Driver.givenName }}</p>
+        <p>Country: {{ driver.driver.Driver.nationality }}</p>
+        <p>Teams: {{ driver.driver.Constructors[0].name }}</p>
+        <p>Birth: {{ driver.driver.Driver.dateOfBirth }}</p>
+        <p><a href='{{ driver.driver.Driver.url }}'>Biography &#x1F517;</a><p>
+    </div>
+    <div class='info'>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan='5'>F-1 {{ driver.year }} Results</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>Round</td>
+                <td>Grand Prix</td>
+                <td>Team</td>
+                <td>Grid</td>
+                <td>Race</td>
+                </tr>
+                <tr ng-repeat='race in driver.races'>
+                <td>{{ race.round }}</td>
+                <td>
+                    <img  ng-src='images/flags/{{ race.Circuit.Location.country }}.png' />
+                    {{ race.raceName }}
+                    </td>
+                <td>{{ race.Results[0].Constructor.name }}</td>
+                <td>{{ race.Results[0].grid}}</td>
+                <td>{{ race.Results[0].position }}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

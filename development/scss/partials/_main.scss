@@ -48,6 +48,7 @@
     }
 
     table {
+        float: left;
         width: 100%;
         img {
             margin-right: 15px;
@@ -81,6 +82,27 @@
         font-weight: bolder;
         font-style: italic;
         padding: 15px 0 15px 25px;
+    }
+    
+    .driver {
+        background-color: darken($grey, 50);
+        color: $white;
+        padding: 10px;
+        float: left;
+        height: 100vh;
+        width: 160px;
+        p {
+            &:nth-child(1), &:nth-child(2) {
+                font-weight: bolder;
+            }
+        }
+        a {
+            color: $white;
+        }
+    }
+    .info {
+        height: 100vh;
+        overflow-y: auto;
     }
 
 }
