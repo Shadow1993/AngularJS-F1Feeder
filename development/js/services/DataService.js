@@ -28,10 +28,18 @@
             });
         };
 
+        var AllTeams = function(year) {
+            return $http({
+                method: 'GET',
+                url: 'http://ergast.com/api/f1/' + year + '/constructors.json'
+            });
+        };
+
         return {
             getDrivers: AllDrivers,
             getDriverDetails: DriverDetails,
-            getDriverRaces: DriverRaces
+            getDriverRaces: DriverRaces,
+            getTeams: AllTeams
         };
     }
 }());

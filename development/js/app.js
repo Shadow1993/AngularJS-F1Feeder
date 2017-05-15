@@ -38,7 +38,15 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
         })
         .state('main.teams', {
             url: '/teams',
-            templateUrl: './../templates/teams.html'
+            templateUrl: './../templates/teams.html',
+            controller: 'TeamsController',
+            controllerAs: 'teams'
+        })
+        .state('main.team', {
+            url: '/teams/{id}',
+            templateUrl: './../templates/team.html',
+            controller: 'TeamController',
+            controllerAs: 'team'
         })
         .state('main.races', {
             url: '/races',

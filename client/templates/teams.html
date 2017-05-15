@@ -1,1 +1,32 @@
-teams
+<div>
+    <div class='search'>
+        <input type='text' ng-model='teams.nameFilter' placeholder='Search...' />
+    </div>
+    <div>
+        <p class='championship'>Drivers Championship</p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan='4'>
+                        Constructors Championship Standings - {{ teams.year }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='team in teams.teams.Constructors | filter:teams.searchFilter'>
+                            <td>{{ $index + 1 }}</td>
+                            <td>
+                                <a ui-sref='main.team({id: team.constructorId})' >
+                                    <img ng-src='images/flags/{{ team.nationality }}.png' />
+                                    {{ team.name }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href='{{ team.url }}'>Details &#x1F517;</a>
+                            </td>
+                        </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
