@@ -1,11 +1,11 @@
 <div>
     <div class='driver'>
         <img ng-src='images/flags/{{ team.team.Constructor.nationality }}.png' />
-        <p>{{ team.team.Constructor.name }}</p>
-        <p>Country: {{ team.team.Constructor.nationality }}</p>
-        <p>Position: {{ team.team.position }}</p>
-        <p>Points: {{ team.team.points }}</p>
-        <p><a href='{{ team.team.Constructor.url }}'>History &#x1F517;</a><p>
+        <p>{{ results.qualify.raceName }}</p>
+        <p>Country: {{ results.qualify.Circuit.Location.country }}</p>
+        <p>Location: {{ results.qualify.Circuit.Location.locality }}</p>
+        <p>Date: {{ results.qualify.date }}</p>
+        <p><a href='{{ results.qualify.url }}'>Full Report &#x1F517;</a><p>
     </div>
     <div class='info'>
         <table>

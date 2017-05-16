@@ -18,7 +18,8 @@
 
         DataService.getTeams(vm.year)
             .then(function(response) {
-                vm.teams = response.data.MRData.ConstructorTable;
+                console.log(response);
+                vm.teams = response.data.MRData.StandingsTable.StandingsLists[0];
             })
             .catch(function(response) {
                 throw response;

@@ -10,27 +10,35 @@
 
         var vm = this;
 
-        vm.nameFilter = null;
-
         vm.year = 2013;
 
         vm.id = $stateParams.id;
 
         vm.test = 'test';
 
-        console.log('TEAM');
-
         DataService.getTeamDetails(vm.year, vm.id)
             .then(function(response) {
-                console.log(response);
+                vm.team = response.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0];
             })
             .catch(function(response) {
                 throw response;
             });
 
-        vm.searchFilter = function(team) {
-            var keyword = new RegExp(vm.nameFilter,'i');
-            return !vm.nameFilter || keyword.test(team.name) || keyword.test(team.nationality);
+        DataService.getTeamResults(vm.year, vm.id)
+            .then(function(response) {
+                vm.results = response.data.MRData.RaceTable;
+            })
+            .catch(function(response) {
+                throw response;
+            });
+
+        vm.getTotal = function(index) {
+            var total = 0;
+            for (var i = 0; i < vm.results.Races[index].Results.length; i++) {
+                var product = vm.results.Races[index].Results[i];
+                total += Number(product.points);
+            }
+            return total;
         };
 
     }

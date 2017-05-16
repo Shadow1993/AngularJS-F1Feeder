@@ -7,22 +7,24 @@
         <table>
             <thead>
                 <tr>
-                    <th colspan='4'>
+                    <th colspan='5'>
                         Constructors Championship Standings - {{ teams.year }}
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat='team in teams.teams.Constructors | filter:teams.searchFilter'>
-                            <td>{{ $index + 1 }}</td>
+                <tr ng-repeat='team in teams.teams.ConstructorStandings | filter:teams.searchFilter'>
+                            <td>{{ team.position }}</td>
                             <td>
-                                <a ui-sref='main.team({id: team.constructorId})' >
-                                    <img ng-src='images/flags/{{ team.nationality }}.png' />
-                                    {{ team.name }}
+                                <a ui-sref='main.team({id: team.Constructor.constructorId})' >
+                                    {{ team.Constructor.name }}
                                 </a>
                             </td>
                             <td>
-                                <a href='{{ team.url }}'>Details &#x1F517;</a>
+                                <a href='{{ team.Constructor.url }}'>Details &#x1F517;</a>
+                            </td>
+                            <td>
+                                {{ team.points }}
                             </td>
                         </tr>
                 </tr>

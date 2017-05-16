@@ -18,7 +18,6 @@
 
         DataService.getRaces(vm.year)
             .then(function(response) {
-                console.log(response);
                 vm.races = response.data.MRData.RaceTable;
             })
             .catch(function(response) {

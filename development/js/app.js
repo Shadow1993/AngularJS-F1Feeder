@@ -53,6 +53,12 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
             templateUrl: './../templates/races.html',
             controller: 'RacesController',
             controllerAs: 'races'
+        })
+        .state('main.results', {
+            url: '/races/{id}',
+            templateUrl: './../templates/results.html',
+            controller: 'ResultsController',
+            controllerAs: 'results'
         });
 
     $locationProvider.html5Mode(true);
