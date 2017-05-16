@@ -50,7 +50,9 @@ app.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
         })
         .state('main.races', {
             url: '/races',
-            templateUrl: './../templates/races.html'
+            templateUrl: './../templates/races.html',
+            controller: 'RacesController',
+            controllerAs: 'races'
         });
 
     $locationProvider.html5Mode(true);

@@ -1,1 +1,32 @@
-races
+<div>
+    <div class='search'>
+        <input type='text' ng-model='races.nameFilter' placeholder='Search...' />
+    </div>
+    <div>
+        <p class='championship'>Race Calendar</p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan='4'>
+                        Race Calendar - {{ races.year }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='race in races.races.Races | filter:races.searchFilter'>
+                            <td>{{ $index + 1 }}</td>
+                            <td>
+                                <img ng-src='./images/flags/{{ race.Driver.nationality }}.png' />
+                                <a ui-sref='main.driver({id: race.Driver.driverId})' >
+                                    {{ race.raceName }}
+                                </a>
+                            </td>
+                            <td>{{ race.Circuit.circuitName }}</td>
+                            <td>{{ race.date }}</td>
+                        </tr>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

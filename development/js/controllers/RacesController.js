@@ -4,9 +4,9 @@
 
     var app = angular.module('app');
 
-    app.controller('TeamController', ['DataService', '$stateParams', TeamController]);
+    app.controller('RacesController', ['DataService', RacesController]);
 
-    function TeamController(DataService, $stateParams) {
+    function RacesController(DataService) {
 
         var vm = this;
 
@@ -14,15 +14,12 @@
 
         vm.year = 2013;
 
-        vm.id = $stateParams.id;
-
         vm.test = 'test';
 
-        console.log('TEAM');
-
-        DataService.getTeamDetails(vm.year, vm.id)
+        DataService.getRaces(vm.year)
             .then(function(response) {
                 console.log(response);
+                vm.races = response.data.MRData.RaceTable;
             })
             .catch(function(response) {
                 throw response;
