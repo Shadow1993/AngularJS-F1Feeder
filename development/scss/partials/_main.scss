@@ -104,6 +104,19 @@
         height: 100vh;
         overflow-y: auto;
     }
+    div div.results {
+        position: absolute;
+        left: 410px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        padding: 0;
+        .tables {
+            max-width: 50%;
+            float: left;
+            padding: 15px;
+        }
+    }
 
 }
 .app-size {

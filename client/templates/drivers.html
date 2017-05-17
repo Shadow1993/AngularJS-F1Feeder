@@ -17,7 +17,7 @@
                             <td>{{ $index + 1 }}</td>
                             <td>
                                 <img ng-src='./images/flags/{{ driver.Driver.nationality }}.png' />
-                                <a ui-sref='main.driver({id: driver.Driver.driverId})' >
+                                <a ui-sref='main.driver({year: drivers.year, id: driver.Driver.driverId})' >
                                     {{ driver.Driver.familyName }}
                                     {{ driver.Driver.givenName }}
                                 </a>

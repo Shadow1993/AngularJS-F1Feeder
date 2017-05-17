@@ -4,21 +4,20 @@
 
     var app = angular.module('app');
 
-    app.controller('TeamsController', ['DataService', TeamsController]);
+    app.controller('TeamsController', ['DataService', '$stateParams', TeamsController]);
 
-    function TeamsController(DataService) {
+    function TeamsController(DataService, $stateParams) {
 
         var vm = this;
 
         vm.nameFilter = null;
 
-        vm.year = 2013;
+        vm.year = $stateParams.year;
 
         vm.test = 'test';
 
         DataService.getTeams(vm.year)
             .then(function(response) {
-                console.log(response);
                 vm.teams = response.data.MRData.StandingsTable.StandingsLists[0];
             })
             .catch(function(response) {

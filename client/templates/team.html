@@ -26,8 +26,10 @@
                 <tr ng-repeat='race in team.results.Races'>
                     <td>{{ race.round }}</td>
                     <td>
-                        <img  ng-src='images/flags/{{ race.Circuit.Location.country }}.png' />
-                        {{ race.raceName }}
+                        <a ui-sref='main.results({year: team.year, id: race.round})'>
+                            <img  ng-src='images/flags/{{ race.Circuit.Location.country }}.png' />
+                            {{ race.raceName }}
+                        </a>
                         </td>
                     <td ng-repeat='driverInfo in race.Results'>
                         {{ driverInfo.position }}

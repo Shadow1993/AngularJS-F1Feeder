@@ -4,15 +4,15 @@
 
     var app = angular.module('app');
 
-    app.controller('DriversController', ['DataService', DriversController]);
+    app.controller('DriversController', ['DataService', '$stateParams', DriversController]);
 
-    function DriversController(DataService) {
+    function DriversController(DataService, $stateParams) {
 
         var vm = this;
 
         vm.nameFilter = null;
 
-        vm.year = 2013;
+        vm.year = $stateParams.year;
 
         vm.test = 'test';
 

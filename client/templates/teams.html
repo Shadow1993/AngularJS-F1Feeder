@@ -16,7 +16,8 @@
                 <tr ng-repeat='team in teams.teams.ConstructorStandings | filter:teams.searchFilter'>
                             <td>{{ team.position }}</td>
                             <td>
-                                <a ui-sref='main.team({id: team.Constructor.constructorId})' >
+                                <a ui-sref='main.team({year: teams.year, id: team.Constructor.constructorId})' >
+                                    <img ng-src='images/flags/{{ team.Constructor.nationality }}.png' />
                                     {{ team.Constructor.name }}
                                 </a>
                             </td>

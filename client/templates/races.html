@@ -16,16 +16,18 @@
                 <tr ng-repeat='race in races.races.Races | filter:races.searchFilter'>
                             <td>{{ $index + 1 }}</td>
                             <td>
-                                <img ng-src='./images/flags/{{ race.Driver.nationality }}.png' />
-                                <a ui-sref='main.results({id: race.round})' >
+                                <a ui-sref='main.results({year:races.year, id: race.round})' >
+                                    <img ng-src='./images/flags/{{ race.Circuit.Location.country }}.png' />
                                     {{ race.raceName }}
                                 </a>
                             </td>
                             <td>{{ race.Circuit.circuitName }}</td>
                             <td>{{ race.date }}</td>
                             <td>
-                                <img ng-src='images/flags/{{ race.Results[0].Driver.nationality }}.png' />
-                                {{ race.Results[0].Driver.familyName }}
+                                <a ui-sref='main.driver({year:races.year, id: race.Results[0].Driver.driverId})'>
+                                    <img ng-src='images/flags/{{ race.Results[0].Driver.nationality }}.png' />
+                                    {{ race.Results[0].Driver.familyName }}
+                                </a>
                             </td>
                         </tr>
                     

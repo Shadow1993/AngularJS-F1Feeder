@@ -7,36 +7,80 @@
         <p>Date: {{ results.qualify.date }}</p>
         <p><a href='{{ results.qualify.url }}'>Full Report &#x1F517;</a><p>
     </div>
-    <div class='info'>
-        <table>
-            <thead>
-                <tr>
-                    <th colspan='6'>F-1 {{ team.year }} Results</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Round</th>
-                    <th>Grand Prix</th>
-                    <th ng-repeat='driver in team.results.Races[0].Results'>
-                        {{ driver.Driver.familyName }}
-                    </th>
-                    <th>Race</th>
-                </tr>
-                <tr ng-repeat='race in team.results.Races'>
-                    <td>{{ race.round }}</td>
-                    <td>
-                        <img  ng-src='images/flags/{{ race.Circuit.Location.country }}.png' />
-                        {{ race.raceName }}
+    <div class='results'>
+        <div class='tables info'>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan='4'>Qualifying Results</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Driver</th>
+                        <th>Team</th>
+                        <th>Best Time</th>
+                    </tr>
+                    <tr ng-repeat='driver in results.qualify.QualifyingResults'>
+                        <td>{{ driver.position }}</td>
+                        <td>
+                            <a ui-sref='main.driver({year:results.year, id: driver.Driver.driverId})'>
+                                <img  ng-src='images/flags/{{ driver.Driver.nationality }}.png' />
+                                {{ driver.Driver.familyName }}
+                            </a>
                         </td>
-                    <td ng-repeat='driverInfo in race.Results'>
-                        {{ driverInfo.position }}
-                    </td>
-                    <td>
-                        {{ team.getTotal($index) }}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        <td>
+                            <a ui-sref='main.team({year:results.year, id: driver.Constructor.constructorId})'>
+                                <img  ng-src='images/flags/{{ driver.Constructor.nationality }}.png' />
+                                {{ driver.Constructor.name }}
+                            </a>
+                        </td>
+                        <td>
+                            {{ results.getTime(driver) }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class='tables info'>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan='5'>Race Results</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Driver</th>
+                        <th>Team</th>
+                        <th>Result</th>
+                        <th>Points</th>
+                    </tr>
+                    <tr ng-repeat='driver in results.results.Results'>
+                        <td>{{ driver.position }}</td>
+                        <td>
+                            <a ui-sref='main.driver({year:results.year, id: driver.Driver.driverId})'>
+                                <img  ng-src='images/flags/{{ driver.Driver.nationality }}.png' />
+                                {{ driver.Driver.familyName }}
+                            </a>
+                        </td>
+                        <td>
+                            <a ui-sref='main.team({year:results.year, id: driver.Constructor.constructorId})'>
+                                <img  ng-src='images/flags/{{ driver.Constructor.nationality }}.png' />
+                                {{ driver.Constructor.name }}
+                            </a>
+                        </td>
+                        <td>
+                            {{ driver.Time.time }}
+                        </td>
+                        <td>
+                            {{ driver.points }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

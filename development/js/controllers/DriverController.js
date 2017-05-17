@@ -10,7 +10,7 @@
 
         var vm = this;
 
-        vm.year = 2013;
+        vm.year = $stateParams.year;
 
         vm.id = $stateParams.id;
 

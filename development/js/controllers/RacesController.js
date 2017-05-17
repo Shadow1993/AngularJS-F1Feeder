@@ -4,15 +4,15 @@
 
     var app = angular.module('app');
 
-    app.controller('RacesController', ['DataService', RacesController]);
+    app.controller('RacesController', ['DataService', '$stateParams', RacesController]);
 
-    function RacesController(DataService) {
+    function RacesController(DataService, $stateParams) {
 
         var vm = this;
 
         vm.nameFilter = null;
 
-        vm.year = 2013;
+        vm.year = $stateParams.year;
 
         vm.test = 'test';
 

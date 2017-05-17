@@ -41,6 +41,17 @@
                 }
             }
         }
+        .selection {
+            select {
+                padding: 5px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+            padding: 25px;
+            font-weight: bold;
+            font-size: 16px;
+            font-style: italic;
+        }
     }
 //Decide are you gonna be doing PHONE or DESKTOP first styling
 
